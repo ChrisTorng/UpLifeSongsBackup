@@ -3,11 +3,11 @@
 
 ## Requirements
 ```
-npm install -g serve
+npm install -g http-server
 ```
 
 ## Run
 ```
-npx serve -l 3001
+npx http-server --cors -p 3001
 ```
 Open [http://localhost:3001](http://localhost:3001).

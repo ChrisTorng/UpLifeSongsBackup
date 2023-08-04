@@ -10,4 +10,6 @@ npm install -g http-server
 ```
 npx http-server --cors -p 3001
 ```
+Or Windows `run.cmd`.
+
 Open [http://localhost:3001](http://localhost:3001).

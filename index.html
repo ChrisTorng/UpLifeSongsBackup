@@ -3,14 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UP 生命力教會 - SongsRemix</title>
+    <title>UP 生命力教會過去備份 - SongsRemix</title>
     <style>
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
             overflow: hidden;
-            /* prevent scrollbars */
         }
         iframe {
             position: absolute;
@@ -19,11 +18,24 @@
             width: 100%;
             height: 100%;
             border: none;
-            /* remove the border */
         }
     </style>
 </head>
 <body>
-    <iframe src="https://christorng.github.io/SongsRemix/src/?songsList=https://christorng.github.io/UpLifeSongsBackup/"></iframe>
+    <script>
+        var songsRemixUrl = 'https://christorng.github.io/SongsRemix/src/';
+        // var songsRemixUrl = 'http://localhost:3000/';
+        var iframe = document.createElement('iframe');
+        iframe.src = `${songsRemixUrl}?songsList=${location.href}`;
+        document.body.appendChild(iframe);
+
+        window.addEventListener('message', function(event) {
+            if (event.origin === new URL(songsRemixUrl).origin &&
+                event.data.type === 'SET_TITLE') {
+                document.title = `${event.data.title} - ${document.title}`;
+            }
+        });
+
+    </script>
 </body>
 </html>

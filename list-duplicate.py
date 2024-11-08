@@ -34,3 +34,10 @@ for youtube_id, names in id_to_names.items():
         print(f"\nYouTube ID: {youtube_id}")
         for name, sub_titles in names.items():
             print(f"  Name: {name}, SubTitles: {', '.join(sub_titles)}")
+
+# 找出 name/youtubeId 相同，但位於多個 subTitle 內的項目
+print("\nName/YoutubeId 相同，但位於多個 subTitle 內的項目:")
+for name, ids in name_to_ids.items():
+    for youtube_id, sub_titles in ids.items():
+        if len(sub_titles) > 1:
+            print(f"\nName: {name}, YouTube ID: {youtube_id}, SubTitles: {', '.join(sub_titles)}")
